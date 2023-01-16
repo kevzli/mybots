@@ -1,7 +1,11 @@
 import numpy
 import matplotlib.pyplot
 
-
-backLegSensorValues = numpy.load("./data/backLegSensorValues.npy", mmap_mode=None, allow_pickle=False, fix_imports=True, encoding='ASCII', *, max_header_size=10000)
+backLegSensorValues = numpy.load('./data/backLegSensorValues.npy')
 print(backLegSensorValues)
-matplotlib.pyplot.plot(backLegSensorValues)
+frontLegSensorValues = numpy.load('./data/frontLegSensorValues.npy')
+print(frontLegSensorValues)
+matplotlib.pyplot.plot(backLegSensorValues, label='back leg', linewidth = 5)
+matplotlib.pyplot.plot(frontLegSensorValues, label='front leg')
+matplotlib.pyplot.legend()
+matplotlib.pyplot.show()
