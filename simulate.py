@@ -1,3 +1,5 @@
+#from simulation import SIMULATION
+
 import pybullet as p
 import pybullet_data
 import time
@@ -6,12 +8,20 @@ import numpy
 import os
 import random
 import matplotlib.pyplot
+import constants as c
 
-# amplitudeFront, frequencyFront, phaseOffsetFront = numpy.pi/4.0, 50, 0
-# amplitudeBack, frequencyBack, phaseOffsetBack = numpy.pi/4.0, 50, numpy.pi/4.0
 
-amplitudeFront, frequencyFront, phaseOffsetFront = numpy.pi/4.0, 5, 0
-amplitudeBack, frequencyBack, phaseOffsetBack = numpy.pi/4.0, 5, numpy.pi/4.0
+#amplitudeFront, frequencyFront, phaseOffsetFront = numpy.pi/4.0, 5, 0
+#amplitudeBack, frequencyBack, phaseOffsetBack = numpy.pi/4.0, 5, numpy.pi/4.0
+
+
+class SIMULATION:
+
+    def __init__(self):
+
+        simulation = SIMULATION()
+        self.world = WORLD()
+        self.robot = ROBOT()
 
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -23,10 +33,10 @@ pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(100)
 frontLegSensorValues = numpy.zeros(100)
 
-x = numpy.linspace(0, numpy.pi * 2, 1001)
+
 #targetAngles = (numpy.pi/4.0) * numpy.sin(x)
-targetAnglesFront = amplitudeFront * numpy.sin(frequencyFront * x + phaseOffsetFront)
-targetAnglesBack = amplitudeBack * numpy.sin(frequencyBack * x + phaseOffsetBack)
+targetAnglesFront = c.amplitudeFront * numpy.sin(c.frequencyFront * c.x + c.phaseOffsetFront)
+targetAnglesBack = c.amplitudeBack * numpy.sin(c.frequencyBack * c.x + c.phaseOffsetBack)
 numpy.save(os.path.join('data', 'targetAnglesFront'), targetAnglesFront, allow_pickle=True, fix_imports=True)
 numpy.save(os.path.join('data', 'targetAnglesBack'), targetAnglesBack, allow_pickle=True, fix_imports=True)
 #exit()
