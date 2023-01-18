@@ -1,4 +1,5 @@
-#from simulation import SIMULATION
+from world import WORLD
+from robot import ROBOT
 
 import pybullet as p
 import pybullet_data
@@ -23,13 +24,16 @@ class SIMULATION:
         self.world = WORLD()
         self.robot = ROBOT()
 
-physicsClient = p.connect(p.GUI)
-p.setAdditionalSearchPath(pybullet_data.getDataPath())
-p.setGravity(0,0,-9.8)
-planeId = p.loadURDF("plane.urdf")
-robotId = p.loadURDF("body.urdf")
-p.loadSDF("world.sdf")
-pyrosim.Prepare_To_Simulate(robotId)
+    physicsClient = p.connect(p.GUI)
+    p.setAdditionalSearchPath(pybullet_data.getDataPath())
+    p.setGravity(0,0,-9.8)
+    #planeId = p.loadURDF("plane.urdf")
+    #robotId = p.loadURDF("body.urdf")
+    #p.loadSDF("world.sdf")
+    pyrosim.Prepare_To_Simulate(self.robotId)    
+
+exit()
+
 backLegSensorValues = numpy.zeros(100)
 frontLegSensorValues = numpy.zeros(100)
 
