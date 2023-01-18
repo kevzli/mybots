@@ -15,10 +15,6 @@ class ROBOT:
 
     def __init__(self):
 
-        robot = ROBOT()
-        self.sensors = SENSOR()
-        self.motors = MOTOR()
-
         self.robotId = p.loadURDF("body.urdf")
     
         
