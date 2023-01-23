@@ -9,5 +9,6 @@ class SENSOR:
         self.values = numpy.zeros(100)
         #print(self.values)
     
-    def Get_Value(self, t):
+    def Get_Value(self):
         self.values = pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName)
+        print(self.values)
