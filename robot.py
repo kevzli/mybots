@@ -26,6 +26,9 @@ class ROBOT:
     
     def Sense(self, t):
         for i in self.sensors:
-            i.Get_Value(t)
+            self.sensors[i].Get_Value(t)
+    
+    def Prepare_To_Act(self):
+        
 
         
