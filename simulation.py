@@ -56,15 +56,3 @@ class SIMULATION:
 # frontLegSensorValues = numpy.zeros(100)
 
 
-# #targetAngles = (numpy.pi/4.0) * numpy.sin(x)
-# targetAnglesFront = c.amplitudeFront * numpy.sin(c.frequencyFront * c.x + c.phaseOffsetFront)
-# targetAnglesBack = c.amplitudeBack * numpy.sin(c.frequencyBack * c.x + c.phaseOffsetBack)
-# numpy.save(os.path.join('data', 'targetAnglesFront'), targetAnglesFront, allow_pickle=True, fix_imports=True)
-# numpy.save(os.path.join('data', 'targetAnglesBack'), targetAnglesBack, allow_pickle=True, fix_imports=True)
-# #exit()
-
-
-# print(backLegSensorValues)
-# numpy.save(os.path.join('data', 'backLegSensorValues'), backLegSensorValues, allow_pickle=True, fix_imports=True)
-# print(frontLegSensorValues)
-# numpy.save(os.path.join('data', 'frontLegSensorValues'), frontLegSensorValues, allow_pickle=True, fix_imports=True)
