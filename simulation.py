@@ -42,7 +42,7 @@ class SIMULATION:
         for t in range(1001):
             p.stepSimulation()
             self.robot.Sense(t)
-            self.robot.Act()
+            self.robot.Act(t)
             time.sleep(1/60)
             print(t)
 
