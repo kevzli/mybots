@@ -30,20 +30,16 @@ class SIMULATION:
 
         self.world = WORLD()
         self.robot = ROBOT()  
-
-        pyrosim.Prepare_To_Simulate(self.robot.robotId)  
-
-        self.robot.Prepare_To_Sense()
         
         
 
     def Run(self):
         
-        for t in range(1001):
+        for t in range(1000):
             p.stepSimulation()
             self.robot.Sense(t)
             self.robot.Think()
-            self.robot.Act(t)
+            self.robot.Act()
             time.sleep(1/60)
             #print(t)
 
